@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusBank - Login / Cadastro</title>
+  <link rel="stylesheet" href="./assets/css/cadastro_login.css">
+</head>
+
+<body>
+
+  <a href="index.html" class="back-btn">← Voltar</a>
+
+  <div class="wrapper" id="wrapper">
+    <div class="overlay"></div>
+
+    <!--Painel-->
+    <div class="panel">
+      <img src="./assets/img/Emblema Clássico de Instituição Financeira (1).png" alt="Logo CampusBank">
+      <h1>CampusBank</h1>
+      <p>Gerencie suas finanças com segurança e praticidade. Simples, rápido e confiável.</p>
+    </div>
+
+    <!-- formulário login/cadastro -->
+    <div class="container" id="container">
+      <form class="form login fade" id="loginForm">
+        <h2>Entrar</h2>
+        <input type="email" id="emailLogin" placeholder="Email" required />
+        <input type="password" id="senhaLogin" placeholder="Senha" required />
+        <button>Login</button>
+        <div class="switch">Não tem conta? <span id="toCadastro">Cadastre-se</span></div>
+      </form>
+
+      <form class="form cadastro fade" id="cadastroForm">
+        <h2>Criar Conta</h2>
+        <input type="text" id="nome" placeholder="Nome completo" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <input type="text" id="cpf" placeholder="CPF" required>
+        <input type="text" id="telefone" name="telefone" placeholder="(11) 99999-9999" maxlength="15" required>
+        <button type="submit">Cadastrar</button>
+        <div class="switch">Já tem conta? <span id="toLogin">Entrar</span></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/cadastro_login.js"></script>
+</body>
+
+</html>

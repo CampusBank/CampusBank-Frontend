@@ -1,0 +1,126 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0a1f44, #3b3b3b);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(15, 25, 50, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      width: 85%;
+      max-width: 1000px;
+      padding: 30px;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffd369;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .denuncia-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #ffd369;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .denuncia-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(255, 211, 105, 0.2);
+    }
+
+    .denuncia-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .denuncia-header h3 {
+      font-size: 1.1rem;
+      color: #ffd369;
+    }
+
+    .denuncia-data {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .denuncia-texto {
+      color: #eee;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .btn-voltar {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: none;
+      border: none;
+      color: #ffd369;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .btn-voltar:hover {
+      color: #ffea8a;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #d4af37, #f5cc70);
+      border: none;
+      border-radius: 8px;
+      color: #0a1f44;
+      font-weight: 600;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-right: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #ffd369;
+      border-radius: 8px;
+      color: #fff;
+      padding: 8px;
+      font-size: 0.9rem;
+      resize: none;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .sem-denuncias {
+      text-align: center;
+      margin-top: 50px;
+      color: #ccc;
+      font-size: 1rem;
+    }

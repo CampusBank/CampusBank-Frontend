@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denúncias | CampusBank</title>
+  <link rel="stylesheet" href="./assets/css/denuncias.css">
+</head>
+<body>
+    <button class="btn-voltar" onclick="voltar()">← Voltar</button>
+  <div class="container">
+    <h1>Denúncias Recebidas</h1>
+    <div id="listaDenuncias">
+      <div class="denuncia-card">
+        <div class="denuncia-header">
+          <h3>Transação Suspeita</h3>
+          <span class="denuncia-data">08/11/2025</span>
+        </div>
+        <p class="denuncia-texto">Usuário relatou atividade suspeita envolvendo transferência de alto valor fora do padrão.</p>
+        <textarea></textarea>
+        <button class="btn" onclick="editarDenuncia(this)">Editar</button>
+        <button class="btn" style="display:none" onclick="salvarDenuncia(this)">Salvar</button>
+      </div>
+
+      <div class="denuncia-card">
+        <div class="denuncia-header">
+          <h3>Comportamento Inadequado</h3>
+          <span class="denuncia-data">06/11/2025</span>
+        </div>
+        <p class="denuncia-texto">Relato de tentativa de golpe usando mensagens falsas de suporte do CampusBank.</p>
+        <textarea></textarea>
+        <button class="btn" onclick="editarDenuncia(this)">Editar</button>
+        <button class="btn" style="display:none" onclick="salvarDenuncia(this)">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/denuncias.js"></script>
+</body>
+</html>

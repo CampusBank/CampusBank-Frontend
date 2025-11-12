@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusBank - Pix</title>
+  <link rel="stylesheet" href="./assets/css/pix.css">
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.location.href='home.html'">← Voltar</button>
+
+  <div class="container checkar">
+    <img src="./assets/img/Emblema Clássico de Instituição Financeira (1).png" alt="CampusBank Logo">
+    <h2>Enviar PIX</h2>
+
+    <input type="text" id="chave" placeholder="Digite a chave PIX (e-mail, CPF ou aleatória)">
+    <button onclick="checkPix()">📤 Enviar</button>
+
+    <div class="message" id="mensagem"></div>
+
+  </div>
+  <div class="container enviar hidden">
+    <img src="./assets/img/Emblema Clássico de Instituição Financeira (1).png" alt="CampusBank Logo">
+    <h2>Enviar PIX</h2>
+
+    <h2 id="nomeReceiver"></h2>
+    <input type="number" id="valor" placeholder="Digite o valor (R$)">
+    <button onclick="enviarPix()">📤 Enviar</button>
+
+    <div class="message" id="mensagemPix"></div>
+
+  </div>
+
+
+
+  <script src="./assets/js/pix.js"></script>
+</body>
+</html>

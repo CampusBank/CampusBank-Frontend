@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Denúncia</title>
+    <link rel="stylesheet" href="./assets/css/criarDenuncias.css">
+</head>
+<body>
+
+    <button class="voltar" onclick="window.location.href='home.html'">← Voltar</button>
+
+    <div class="container">
+        <h2>Criar Denúncia</h2>
+        <form id="formDenuncia">
+            <label for="usuario">Usuário Denunciado</label>
+            <input type="text" id="usuario" placeholder="Nome ou ID do usuário" required>
+
+            <label for="motivo">Motivo</label>
+            <select id="motivo" required>
+                <option value="">Selecione...</option>
+                <option value="fraude">Fraude</option>
+                <option value="golpe">Golpe</option>
+                <option value="comportamento">Comportamento Inadequado</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" placeholder="Descreva o ocorrido..." required></textarea>
+
+            <button type="submit" class="btn">Enviar Denúncia</button>
+        </form>
+
+        <div class="msg" id="msgSucesso">✅ Denúncia enviada com sucesso!</div>
+    </div>
+
+    <script src="assets/js/criarDenuncias.js"></script>
+</body>
+</html>

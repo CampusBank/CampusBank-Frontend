@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0b1f3a 40%, #b49132);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  width: 1000px; /* largura aumentada */
+  max-width: 95%;
+  height: 600px; /* altura aumentada */
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === LADO ESQUERDO === */
+.left {
+  background: rgba(10, 25, 60, 0.8);
+  flex: 1.1; /* leve aumento */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  overflow-y: auto; /* rolagem caso tenha muitas chaves */
+}
+
+.left h2 {
+  font-size: 1.6rem;
+  color: #fbd85a;
+}
+
+.left .balance {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: #fbd85a;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(251, 216, 90, 0.3);
+}
+
+.left button {
+  background: #fbd85a;
+  color: #0b1f3a;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(251, 216, 90, 0.3);
+}
+
+.left button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(251, 216, 90, 0.6);
+}
+
+button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === LADO DIREITO === */
+.right {
+  flex: 1.3;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem 3.5rem;
+  gap: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto; /* garante que transações longas não quebrem */
+}
+
+.right h3 {
+  font-size: 1.3rem;
+  color: #fbd85a;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.transaction {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.transaction:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.transaction small {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.value.positive {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.value.negative {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* === BOTÕES === */
+.report-btn {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.report-btn:hover {
+  background: #ff5c5c;
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.4);
+  transform: translateY(-2px);
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  color: #fbd85a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-3px);
+  text-decoration: underline;
+}
+
+/* === BLOCO DE CHAVES PIX === */
+.chaves {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.2rem;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(251, 216, 90, 0.2);
+  text-align: left;
+  max-height: 220px; /* limite de altura */
+  overflow-y: auto; /* rolagem se tiver muitas chaves */
+  scrollbar-width: thin;
+  scrollbar-color: #fbd85a rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.chaves h3 {
+  color: #fbd85a;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.chave-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.chave-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.chave-item .tipo {
+  color: #fbd85a;
+  font-weight: 600;
+}
+
+.chave-item .valor {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  word-break: break-all;
+}
+
+/* === RODAPÉ === */
+.footer {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-align: center;
+}

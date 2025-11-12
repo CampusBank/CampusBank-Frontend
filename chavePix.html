@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusBank - Criar Chave PIX</title>
+  <link rel="stylesheet" href="./assets/css/chavePix.css">
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.location.href='home.html'">← Voltar</button>
+
+  <div class="container">
+    <img src="./assets/img/Emblema Clássico de Instituição Financeira (1).png" alt="CampusBank Logo">
+    <h2>Criar Chave PIX</h2>
+
+    <div class="input-group">
+      <select id="tipoChave">
+        <option value="">Selecione o tipo de chave</option>
+        <option value="cpf">CPF</option>
+        <option value="email">E-mail</option>
+        <option value="telefone">Telefone</option>
+        <option value="aleatoria">Chave Aleatória</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="valorChave" placeholder="Digite sua chave PIX">
+    </div>
+
+    <button onclick="criarChave()">💾 Criar Chave</button>
+
+    <div class="message" id="mensagem"></div>
+  </div>
+
+  <script src="./assets/js/chavePix.js"></script>
+</body>
+</html>

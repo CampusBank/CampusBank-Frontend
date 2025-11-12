@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusBank - Home</title>
+  <link rel="stylesheet" href="./assets/css/home.css">
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.location.href='index.html'">← Voltar</button>
+
+  <!-- Painel -->
+  <div class="container">
+    <div class="left">
+      <h2 id="usuario">Bem-vindo, Ana Costa</h2>
+      <h2>Seu saldo disponível</h2>
+
+      <div class="balance" id="saldo">R$ 1.110,00</div>
+      <button id="toggleSaldo">👁️ Ocultar saldo</button>
+
+      <div>
+        <button><a href="pix.html">📤 Enviar Pix</a></button>
+        <button><a href="chavePix.html">🔑 Criar chave</a></button>
+      </div>
+
+      <!-- Chaves -->
+      <div class="chaves">
+        <h3>Suas chaves Pix</h3>
+
+        <div class="chave-item">
+          <span class="tipo">CPF</span>
+          <span class="valor">123.456.789-00</span>
+        </div>
+
+        <div class="chave-item">
+          <span class="tipo">E-mail</span>
+          <span class="valor">ana.costa@gmail.com</span>
+        </div>
+
+        <div class="chave-item">
+          <span class="tipo">Chave Aleatória</span>
+          <span class="valor">d9a7f8e1-32b4-45cc-bb11-abc654c901d0</span>
+        </div>
+      </div>
+    </div>
+
+    <!--Extrato-->
+    <div class="right">
+      <h3>Últimas movimentações</h3>
+
+      <div class="transaction">
+        <div>
+          <p>Transferência recebida</p>
+          <small>Ontem • 14:22</small>
+        </div>
+        <span class="value positive">+R$ 250,00</span>
+      </div>
+
+      <div class="transaction">
+        <div>
+          <p>Pagamento Pix</p>
+          <small>Hoje • 10:11</small>
+        </div>
+        <span class="value negative">-R$ 50,00</span>
+      </div>
+
+      <div class="transaction">
+        <div>
+          <p>Recarga celular</p>
+          <small>Hoje • 08:47</small>
+        </div>
+        <span class="value negative">-R$ 120,00</span>
+      </div>
+
+      <button class="report-btn"><a href="criarDenuncias.html">🚨 Denunciar transação</a></button>
+    </div>
+  </div>
+
+  <div class="footer">
+    CampusBank © 2025 • Tecnologia e segurança para sua conta
+  </div>
+
+  <script src="assets/js/home.js"></script>
+
+</body>
+</html>

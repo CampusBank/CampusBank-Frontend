@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusBank - Seu Banco Universitário</title>
+ <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body>
+
+  <header>
+    <div style="display:flex;align-items:center;">
+      <img src="./assets/img/Emblema Clássico de Instituição Financeira (1).png" alt="Logo CampusBank">
+      <h1>CampusBank</h1>
+    </div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="cadastro_login.html" id="menuCadastro" class="btn">Conectar-se</a>
+
+      <a href="home.html" id="menuHome" class="btn protegido">Home</a>
+      <a href="denuncias.html" id="menuDenuncias" class="btn protegidoAdm">Denúncias</a>
+
+      <button id="logout" class="protegido btnD">Sair</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>O banco digital feito para o ambiente acadêmico</h2>
+      <p>O CampusBank é uma plataforma criada para simular transações financeiras seguras e rápidas dentro do ambiente
+        universitário. Um projeto que une aprendizado, tecnologia e inovação em um único sistema.</p>
+      <a href="cadastro_login.html" class="btn">Começar Agora</a>
+    </div>
+    <div class="illustration">
+      <img src="./assets/img/ChatGPT_Image_9_de_nov._de_2025__16_10_55-removebg-preview.png"
+        alt="Estudante usando o celular com o logo do CampusBank">
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre o Projeto</h2>
+    <p>O CampusBank nasceu como um projeto acadêmico com o objetivo de demonstrar, na prática, o funcionamento de um
+      sistema bancário digital. Ele simula contas, transações, autenticação segura e gerenciamento de usuários,
+      abordando também conceitos de criptografia, redes e segurança da informação.</p>
+  </section>
+
+  <section id="funcionalidades">
+    <h2>Funcionalidades</h2>
+    <div class="feature-grid">
+      <div class="feature-card"><span class="icon">💳</span>
+        <h3>Transações Pix</h3>
+        <p>Envie e receba valores instantaneamente com simulação de validação de chaves e autenticação via token JWT.
+        </p>
+      </div>
+      <div class="feature-card"><span class="icon">👤</span>
+        <h3>Perfil Seguro</h3>
+        <p>Gerencie seus dados com criptografia e controle de acesso, protegendo cada ação dentro do sistema.</p>
+      </div>
+      <div class="feature-card"><span class="icon">📊</span>
+        <h3>Painel Interativo</h3>
+        <p>Acompanhe suas movimentações, saldo e histórico com interface moderna e responsiva.</p>
+      </div>
+      <div class="feature-card"><span class="icon">🔐</span>
+        <h3>Autenticação JWT</h3>
+        <p>Login e cadastro protegidos com tokens, garantindo escalabilidade e segurança em rotas privadas.</p>
+      </div>
+      <div class="feature-card"><span class="icon">🧠</span>
+        <h3>Aprendizado Técnico</h3>
+        <p>Feito para aprendizado de conceitos de backend, redes, protocolos e segurança em um ambiente real.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 CampusBank — Projeto acadêmico desenvolvido com foco em inovação, segurança e aprendizado.</p>
+  </footer>
+
+  <div class="circles"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
