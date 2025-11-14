@@ -162,6 +162,13 @@ button:hover {
     transform: translateY(-2px);
 }
 
+.message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #fbd85a;
+  font-weight: 600;
+  min-height: 20px;
+}
 
 
 .fade {

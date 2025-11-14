@@ -25,9 +25,11 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(15px);
-  width: 1000px; /* largura aumentada */
+  width: 1000px;
+  /* largura aumentada */
   max-width: 95%;
-  height: 600px; /* altura aumentada */
+  height: 600px;
+  /* altura aumentada */
   animation: fadeIn 0.6s ease;
 }
 
@@ -36,6 +38,7 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -45,7 +48,8 @@ body {
 /* === LADO ESQUERDO === */
 .left {
   background: rgba(10, 25, 60, 0.8);
-  flex: 1.1; /* leve aumento */
+  flex: 1.1;
+  /* leve aumento */
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -53,7 +57,8 @@ body {
   align-items: center;
   text-align: center;
   gap: 1.5rem;
-  overflow-y: auto; /* rolagem caso tenha muitas chaves */
+  overflow-y: auto;
+  /* rolagem caso tenha muitas chaves */
 }
 
 .left h2 {
@@ -103,7 +108,8 @@ button a {
   padding: 2.5rem 3.5rem;
   gap: 1rem;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
-  overflow-y: auto; /* garante que transações longas não quebrem */
+  overflow-y: auto;
+  /* garante que transações longas não quebrem */
 }
 
 .right h3 {
@@ -118,6 +124,7 @@ button a {
   border-radius: 10px;
   padding: 0.8rem 1rem;
   display: flex;
+  margin-top: 2%;
   justify-content: space-between;
   align-items: center;
   transition: background 0.3s ease;
@@ -163,15 +170,15 @@ button a {
 
 .back-btn {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  background: transparent;
-  border: none;
-  color: #fbd85a;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.3s ease;
+  right: 1%;
+  top: 1%;
+  padding: 10px 25px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #eb5858, #f85d5d);
+  color: #0b1d3a;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .back-btn:hover {
@@ -188,8 +195,10 @@ button a {
   width: 100%;
   box-shadow: 0 0 10px rgba(251, 216, 90, 0.2);
   text-align: left;
-  max-height: 220px; /* limite de altura */
-  overflow-y: auto; /* rolagem se tiver muitas chaves */
+  max-height: 220px;
+  /* limite de altura */
+  overflow-y: auto;
+  /* rolagem se tiver muitas chaves */
   scrollbar-width: thin;
   scrollbar-color: #fbd85a rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;

@@ -45,6 +45,9 @@ async function criarChave() {
     } else {
       mensagem.textContent = `❌ Erro: ${data.mensagem || 'Falha ao criar chave.'}`;
     }
+    setTimeout(() => {
+            window.location.href = 'home.html';
+        }, 2000);
 
   } catch (error) {
     console.error(error);
