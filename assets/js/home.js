@@ -99,7 +99,7 @@ async function carregarTransacoes() {
 
     let transacoes = await res.json();
 
-    // 🟡 Ordena do mais novo → mais velho
+   
     transacoes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
     const userId = getUserIdFromToken();
@@ -109,6 +109,12 @@ async function carregarTransacoes() {
     transacoes.forEach(t => {
       const recebido = t.receiver?._id === userId;
       const valor = `${recebido ? "+" : "-"}R$ ${t.valor}`;
+
+    
+      let statusColor = "gray";
+      if (t.status === "concluída") statusColor = "green";
+      if (t.status === "falhou") statusColor = "red";
+      if (t.status === "pendente") statusColor = "orange";
 
       const div = document.createElement("div");
       div.classList.add("transaction");
@@ -120,6 +126,13 @@ async function carregarTransacoes() {
           <p>
             <strong>De:</strong> ${t.sender?.nome || "(desconhecido)"}<br>
             <strong>Para:</strong> ${t.receiver?.nome || "(desconhecido)"}
+          </p>
+
+          <p>
+            <strong>Status:</strong> 
+            <span style="font-weight:600; color:${statusColor};">
+              ${t.status.toUpperCase()}
+            </span>
           </p>
 
           <small>${new Date(t.createdAt).toLocaleString()}</small>
@@ -145,6 +158,3 @@ function getUserIdFromToken() {
 }
 
 carregarTransacoes();
-
-
-

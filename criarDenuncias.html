@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Denúncia</title>
-    <link rel="stylesheet" href="./assets/css/criarDenuncias.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denúncia - CampusBank</title>
+  <link rel="stylesheet" href="assets/css/criarDenuncias.css">
 </head>
 <body>
 
-    <button class="voltar" onclick="window.location.href='home.html'">← Voltar</button>
+  <button class="back-btn" onclick="window.location.href='home.html'">← Voltar</button>
 
-    <div class="container">
-        <h2>Criar Denúncia</h2>
-        <form id="formDenuncia">
-            <label for="usuario">Usuário Denunciado</label>
-            <input type="text" id="usuario" placeholder="Nome ou ID do usuário" required>
+  <div class="container">
+    <h1 class="title">Denunciar Usuário</h1>
 
-            <label for="motivo">Motivo</label>
-            <select id="motivo" required>
-                <option value="">Selecione...</option>
-                <option value="fraude">Fraude</option>
-                <option value="golpe">Golpe</option>
-                <option value="comportamento">Comportamento Inadequado</option>
-                <option value="outro">Outro</option>
-            </select>
+    <p class="subtitle">
+      Use este formulário para denunciar atividades suspeitas, golpes ou comportamento inadequado.
+    </p>
 
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" placeholder="Descreva o ocorrido..." required></textarea>
+    <div class="form">
 
-            <button type="submit" class="btn">Enviar Denúncia</button>
-        </form>
+      <label class="label">Tipo da denúncia:</label>
+      <select class="input" id="options" required>
+        <option value="">Selecione</option>
+        <option value="golpe">Golpe / atividade fraudulenta</option>
+        <option value="fraude">Fraude</option>
+        <option value="transferência suspeita">Transferência suspeita</option>
+        <option value="outro">Outros</option>
+      </select>
 
-        <div class="msg" id="msgSucesso">✅ Denúncia enviada com sucesso!</div>
+      <label class="label">ID da transferência</label>
+      <input type="text" class="input" id="transacao" placeholder="Ex: 67195ghe7d1dcb129jc7c21tj3" required>
+
+      <label class="label">Descrição da denúncia:</label>
+      <textarea class="input textarea" id="descricao" placeholder="Explique detalhadamente o ocorrido..." required></textarea>
+
+      <div class="message" id="mensagem"></div>
+
+      <button class="btn" type="submit" onclick="criarDenuncia()">Enviar Denúncia</button>
     </div>
+  </div>
 
-    <script src="assets/js/criarDenuncias.js"></script>
+  <script src="assets/js/criarDenuncias.js"></script>
 </body>
 </html>

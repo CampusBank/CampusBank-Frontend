@@ -52,7 +52,7 @@ async function isADM(token) {
 
     const user = result.user
 
-    if (user.role === 'admin') return alert('salve adm')
+    if (user.role === 'admin') return true
 
 
   } catch (err) {
