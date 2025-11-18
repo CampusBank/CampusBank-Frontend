@@ -5,11 +5,11 @@ if (!token) {
 }
 
 const receiverUser = document.querySelector('#nomeReceiver');
+const scoreReceiver = document.querySelector('#scoreReceiver'); // 👈 ADD
 const check = document.querySelector('.checkar');
 const enviar = document.querySelector('.enviar');
 const mensagem = document.querySelector('#mensagem');
 const mensagemPix = document.querySelector('#mensagemPix');
-
 
 let chavePix = null;
 
@@ -22,8 +22,6 @@ async function checkPix() {
         return;
     }
 
-    const data = { key: chave };
-
     try {
         const response = await fetch('http://localhost:3000/checkKey', {
             method: 'POST',
@@ -31,20 +29,30 @@ async function checkPix() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({ key: chave })
         });
 
         const result = await response.json();
 
         if (!response.ok) {
-            mensagem.textContent = result.message || "Erro ao verificar chave PIX!";
+            mensagem.textContent = result.mensagem || "Erro ao verificar chave PIX!";
             mensagem.style.color = "#ff5c5c";
             return;
         }
 
         chavePix = chave;
 
+      
         receiverUser.textContent = result.nome;
+
+       
+        scoreReceiver.textContent = result.score;
+
+      
+        scoreReceiver.style.color = result.score.includes("baixa")
+            ? "#ff5c5c"
+            : "#4CAF50";
+
         check.classList.add('hidden');
         enviar.classList.remove('hidden');
         mensagem.textContent = '';
@@ -59,7 +67,6 @@ async function checkPix() {
 async function enviarPix() {
     const valor = Number(document.getElementById('valor').value.trim());
 
-
     if (!valor || !chavePix) {
         mensagemPix.textContent = "Preencha o valor e verifique a chave PIX primeiro!";
         mensagemPix.style.color = "#ff5c5c";
@@ -70,8 +77,6 @@ async function enviarPix() {
         chavePix: chavePix,
         valor: Number(valor)
     };
-
-    console.log(data)
 
     try {
         const response = await fetch('http://localhost:3000/sendPix', {
@@ -94,11 +99,9 @@ async function enviarPix() {
         mensagemPix.textContent = "PIX enviado com sucesso! 💸";
         mensagemPix.style.color = "#4CAF50";
 
-        
         document.getElementById('valor').value = '';
         chavePix = null;
 
-        
         setTimeout(() => {
             window.location.href = 'home.html';
         }, 2000);
