@@ -5,7 +5,7 @@ if (!token) {
 }
 
 const receiverUser = document.querySelector('#nomeReceiver');
-const scoreReceiver = document.querySelector('#scoreReceiver'); // 👈 ADD
+const scoreReceiver = document.querySelector('#scoreReceiver');
 const check = document.querySelector('.checkar');
 const enviar = document.querySelector('.enviar');
 const mensagem = document.querySelector('#mensagem');
@@ -42,16 +42,17 @@ async function checkPix() {
 
         chavePix = chave;
 
-      
         receiverUser.textContent = result.nome;
 
-       
-        scoreReceiver.textContent = result.score;
+        const nomeUsuario = localStorage.getItem('nome');
+        if (result.nome === nomeUsuario) {
+            mensagem.textContent = "Você não pode enviar PIX para si mesmo!";
+            mensagem.style.color = "#ff5c5c";
+            return;
+        }
 
-      
-        scoreReceiver.style.color = result.score.includes("baixa")
-            ? "#ff5c5c"
-            : "#4CAF50";
+        scoreReceiver.textContent = result.score;
+        scoreReceiver.style.color = result.score.includes("baixa") ? "#ff5c5c" : "#4CAF50";
 
         check.classList.add('hidden');
         enviar.classList.remove('hidden');
@@ -91,8 +92,8 @@ async function enviarPix() {
         const result = await response.json();
 
         if (!response.ok) {
-            mensagem.textContent = result.message || "Erro ao enviar o PIX!";
-            mensagem.style.color = "#ff5c5c";
+            mensagemPix.textContent = result.mensagem || "Erro ao enviar o PIX!";
+            mensagemPix.style.color = "#ff5c5c";
             return;
         }
 
