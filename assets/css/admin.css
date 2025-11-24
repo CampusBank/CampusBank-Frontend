@@ -50,6 +50,23 @@ header {
   color: #ffd577;
 }
 
+.back-bttn {
+  position: absolute;
+  top: 100px;
+  right: 25px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #eb5858, #f85d5d);
+  color: #0b1d3a;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-bttn:hover {
+  transform: translateX(-3px);
+  text-decoration: underline;
+}
 
 .denuncia-item {
   background: rgba(255, 255, 255, 0.15);
@@ -75,6 +92,8 @@ strong {
   color: #f2cd66;
   font-weight: 600;
 }
+
+
 
 
 select {

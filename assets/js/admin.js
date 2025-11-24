@@ -1,43 +1,49 @@
 
-    const token = localStorage.getItem("token");
+const token = localStorage.getItem("token");
 
-    // 🔐 VERIFICAR ADMIN
-    async function verificarAdmin() {
-      try {
-        const req = await fetch("http://localhost:3000/protegido", {
-          method: "GET",
-          headers: { "Authorization": `Bearer ${token}` }
-        });
 
-        const data = await req.json();
+document.getElementById('logout').addEventListener('click', () => {
+  localStorage.clear();
+  window.location.href = 'index.html'
+})
 
-        if (!data.user || data.user.role !== "admin") {
-          alert("Acesso negado! Apenas administradores podem entrar.");
-          window.location.href = "home.html";
-        }
 
-      } catch (err) {
-        console.error(err);
-        alert("Erro ao validar administrador.");
-      }
+async function verificarAdmin() {
+  try {
+    const req = await fetch("http://localhost:3000/protegido", {
+      method: "GET",
+      headers: { "Authorization": `Bearer ${token}` }
+    });
+
+    const data = await req.json();
+
+    if (!data.user || data.user.role !== "admin") {
+      alert("Acesso negado! Apenas administradores podem entrar.");
+      window.location.href = "home.html";
     }
 
-    // 📌 CARREGAR DENÚNCIAS
-    async function carregarDenuncias() {
-      try {
-        const req = await fetch("http://localhost:3000/listarDenuncias", {
-          headers: { "Authorization": `Bearer ${token}` }
-        });
+  } catch (err) {
+    console.error(err);
+    alert("Erro ao validar administrador.");
+  }
+}
 
-        const denuncias = await req.json();
-        const container = document.getElementById("listaDenuncias");
-        container.innerHTML = "";
 
-        denuncias.forEach((d) => {
-          const div = document.createElement("div");
-          div.className = "denuncia-item";
+async function carregarDenuncias() {
+  try {
+    const req = await fetch("http://localhost:3000/listarDenuncias", {
+      headers: { "Authorization": `Bearer ${token}` }
+    });
 
-          div.innerHTML = `
+    const denuncias = await req.json();
+    const container = document.getElementById("listaDenuncias");
+    container.innerHTML = "";
+
+    denuncias.forEach((d) => {
+      const div = document.createElement("div");
+      div.className = "denuncia-item";
+
+      div.innerHTML = `
             <p><strong>ID:</strong> ${d._id}</p>
             <p><strong>Status atual:</strong> ${d.status}</p>
             <p><strong>Tipo:</strong> ${d.tipo}</p>
@@ -57,37 +63,37 @@
             </button>
           `;
 
-          container.appendChild(div);
-        });
+      container.appendChild(div);
+    });
 
-      } catch (e) {
-        console.error(e);
-      }
-    }
+  } catch (e) {
+    console.error(e);
+  }
+}
 
-   
-    async function atualizarDenuncia(id) {
-      const novoStatus = document.getElementById(`status-${id}`).value;
 
-      const req = await fetch("http://localhost:3000/atualizarDenuncias", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
-        },
-        body: JSON.stringify({ idDenun: id, status: novoStatus })
-      });
+async function atualizarDenuncia(id) {
+  const novoStatus = document.getElementById(`status-${id}`).value;
 
-      const res = await req.json();
+  const req = await fetch("http://localhost:3000/atualizarDenuncias", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify({ idDenun: id, status: novoStatus })
+  });
 
-      if (res.novoScore !== undefined) {
-        alert(`${res.mensagem}\nNovo score do usuário denunciado: ${res.novoScore}`);
-      } else {
-        alert(res.mensagem);
-      }
+  const res = await req.json();
 
-      carregarDenuncias();
-    }
+  if (res.novoScore !== undefined) {
+    alert(`${res.mensagem}\nNovo score do usuário denunciado: ${res.novoScore}`);
+  } else {
+    alert(res.mensagem);
+  }
 
-    verificarAdmin();
-    carregarDenuncias();
+  carregarDenuncias();
+}
+
+verificarAdmin();
+carregarDenuncias();
